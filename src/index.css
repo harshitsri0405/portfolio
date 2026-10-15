@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+/* Design tokens: use them as bg-ink, text-muted, border-line, text-aqua, font-display ... */
+@theme {
+  --color-ink: #070b1a;
+  --color-surface: #0d1329;
+  --color-line: #1c2545;
+  --color-text: #e6ebf5;
+  --color-muted: #9aa7c4;
+  --color-iris: #818cf8;
+  --color-azure: #4f8bff;
+  --color-aqua: #22d3ee;
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--color-ink);
+}
+
+
+body {
+  margin: 0;
+  background: var(--color-ink);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* Sections stop below the sticky navbar when scrolled to */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* Visible keyboard focus everywhere */
+:focus-visible {
+  outline: 2px solid var(--color-aqua);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.15rem;
+  border-radius: 0.6rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+}
+.btn-primary {
+  background: var(--color-aqua);
+  color: #04121a;
+}
+.btn-primary:hover {
+  background: #67e8f9;
+}
+.btn-ghost {
+  border-color: var(--color-line);
+  color: var(--color-text);
+}
+.btn-ghost:hover {
+  border-color: var(--color-azure);
+  background: rgba(79, 139, 255, 0.08);
+}
+
+/* Hero entrance: one orchestrated sequence on page load */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.rise {
+  opacity: 0;
+  animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+  animation-delay: var(--d, 0s);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .rise {
+    animation: none;
+    opacity: 1;
+  }
+}
