@@ -108,7 +108,7 @@ npm run preview
 - **GitHub:** [harshitsri0405](https://github.com/harshitsri0405)
 - **LinkedIn:** https://www.linkedin.com/in/harshit-srivastava-9015aa312/
 - **Email:** harshitsri0405@gamil.com
-- **Portfolio:** [Add your live portfolio URL after deployment]
+- **Portfolio:** http://portfolio-one-psi-6sc2rcibd1.vercel.app/
 
 ## 📄 License
 
